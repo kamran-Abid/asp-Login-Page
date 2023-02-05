@@ -1,0 +1,33 @@
+﻿@model LoginCoreMVC.Models.Ad_login;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form class="form-horizontal" asp-action="Index">
+                <div class="form-group">
+                    <label class="control-label">Admin ID</label>
+                    <input asp-for="Ad_id" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Admin Password</label>
+                    <input asp-for="Ad_Password" class="form-control" type="password" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@{       if (TempData["msg"] != null)
+            {
+                <script>
+                    alert('@TempData["msg"]')
+                </script>
+            }
+}
